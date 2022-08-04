@@ -13,7 +13,7 @@ LIST_OF_ADMINS = list(map(int, env.list('LIST_OF_ADMINS')))
 
 def get_main_menu(user_id: int) -> ReplyKeyboardMarkup:
     custom_keyboard = [
-        
+        ['Программа мероприятия']
     ]
     if is_user_admin(user_id):
         custom_keyboard.append(['Панель администратора'])

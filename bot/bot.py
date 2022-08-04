@@ -1,3 +1,4 @@
+from asyncore import read
 import logging
 
 from telegram import ParseMode, ReplyKeyboardMarkup, Update
@@ -30,14 +31,15 @@ def return_to_main_menu(update: Update, context: CallbackContext):
     )
 
 
+def show_schedule(update: Update, context: CallbackContext):
+    pass
+
+
 def handle_menu_actions(update: Update, context: CallbackContext):
-    menu_actions = {
-        'Главное меню': return_to_main_menu,
-        
-    }
+    menu_actions = read_json('menu_actions.json')
     action_text = update.message.text
     if action_text in menu_actions:
-        action = menu_actions[action_text]
+        action = eval(menu_actions[action_text])
         action(update, context)
     else:
         context.bot.send_message(

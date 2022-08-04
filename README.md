@@ -16,7 +16,7 @@ Before you run any of the scripts, you may need to configure environmental varia
 It is the file to contain environmental variables that usually store data unique to each user, thus you will need to create your own.
 2. Copy and paste this to `.env` file:
 ```dotenv
-BOT_TOKEN={telegram_bot_token}
+BOT_TOKEN='{telegram_bot_token}'
 ```
 3. Replace `{telegram_token}` with API token for the Telegram bot you have created with the help of [BotFather](https://telegram.me/BotFather). This token will look something like this: `958423683:AAEAtJ5Lde5YYfkjergber`.
 
