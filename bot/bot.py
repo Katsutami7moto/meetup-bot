@@ -9,15 +9,10 @@ from .admin_panel import get_main_menu, open_admin_panel
 from .bot_helpers import read_json, write_json
 
 
-def get_hello_message() -> str:
-    hello_message = read_json('hello.json')['hello']
-    return hello_message
-
-
 def start(update: Update, context: CallbackContext):
     context.bot.send_message(
         chat_id=update.effective_chat.id,
-        text=get_hello_message(),
+        text=read_json('hello.json')['hello'],
         parse_mode=ParseMode.HTML,
         reply_markup=get_main_menu(update.effective_user.id)
     )
