@@ -6,14 +6,13 @@ DATA_FOLDER = 'data'
 
 def read_json(filename: str):
     """Десериализовать JSON"""
-    with open(Path.cwd() / Path(DATA_FOLDER) / filename,
-              'r', encoding='utf8') as file_:
-        file_json = file_.read()
-    return json.loads(file_json)
+    path_ = Path.cwd() / Path(DATA_FOLDER) / filename
+    with open(path_, 'r', encoding='utf8') as file_:
+        return json.load(file_)
 
 
 def write_json(data, filename: str):
     """Сериализовать JSON"""
-    with open(Path.cwd() / Path(DATA_FOLDER) / filename,
-              'w', encoding='utf8') as file_:
-        file_.write(json.dumps(data, indent=4, ensure_ascii=False))
+    path_ = Path.cwd() / Path(DATA_FOLDER) / filename
+    with open(path_, 'w', encoding='utf8') as file_:
+        json.dump(data, file_, indent=4, ensure_ascii=False)
