@@ -1,5 +1,6 @@
 {
     "Главное меню": "return_to_main_menu",
     "Программа мероприятия": "show_schedule",
+    "Задать вопрос докладчику": "ask_question_speaker",
     "": ""
 }
