@@ -35,6 +35,10 @@ def show_schedule(update: Update, context: CallbackContext):
     pass
 
 
+def send_question(update: Update, context: CallbackContext):
+    pass
+
+
 def handle_menu_actions(update: Update, context: CallbackContext):
     menu_actions = read_json('menu_actions.json')
     action_text = update.message.text
